@@ -80,7 +80,7 @@ export default function LegalFlowcharts() {
     const tryGenerateFlowchart = async (): Promise<FlowchartType> => {
       try {
         const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_AI_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
         const result = await model.generateContent({
           contents: [{ role: "user", parts: [{ text: generateFlowchartPrompt(flowType) }]}],
